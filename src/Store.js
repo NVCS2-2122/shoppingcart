@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import StoreItem from './StoreItem'
 
 function Store() {
     const [items,setItems] = useState([
@@ -10,14 +11,29 @@ function Store() {
         },
         {
             id: 2,
-            name: "Banana (bunch)",
-            price: 0.89,
-            inventory: 7
+            name: "rasberries (pint)",
+            price: 3.95,
+            inventory: 10
+        },
+        {
+            id: 3,
+            name: "hot cocoa mix",
+            price: 3.95,
+            inventory: 1
         },
     ])
 
     return (
         <div>
+            Buy my fruit!
+            {items.map((item) => 
+                <StoreItem 
+                    name={item.name}
+                    price={item.price}
+                    inventory={item.inventory}
+                    key={item.id}
+                />
+            )}
             
         </div>
     )
