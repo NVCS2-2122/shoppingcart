@@ -23,6 +23,10 @@ function Store() {
         },
     ])
 
+    const addToCart = () => {
+        alert("banana")
+    }
+
     return (
         <div>
             Buy my fruit!
@@ -32,6 +36,7 @@ function Store() {
                     price={item.price}
                     inventory={item.inventory}
                     key={item.id}
+                    addToCart={addToCart}
                 />
             )}
             
