@@ -23,8 +23,9 @@ function Store() {
         },
     ])
 
-    const addToCart = () => {
-        alert("banana")
+    const addToCart = (id) => {
+        const item = items.find(item => item.id == id)
+        alert(item.name)
     }
 
     return (
@@ -33,6 +34,7 @@ function Store() {
             {items.map((item) => 
                 <StoreItem 
                     name={item.name}
+                    id={item.id}
                     price={item.price}
                     inventory={item.inventory}
                     key={item.id}
