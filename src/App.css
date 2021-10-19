@@ -7,6 +7,17 @@
   pointer-events: none;
 }
 
+.Fidget {
+  display: flex;
+  flex-flow: row wrap;
+  width: 600px;
+}
+
+.Pop {
+  width: 200px;
+  font-size: 500%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
