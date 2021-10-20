@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import StoreItem from './StoreItem'
 
-function Store() {
+function Store({addToCart}) {
     const [items,setItems] = useState([
         {
             id: 1,
@@ -22,12 +22,11 @@ function Store() {
             inventory: 1
         },
     ])
-
-    const addToCart = (id) => {
-        const item = items.find(item => item.id == id)
-        alert(item.name)
+    const startAddToCart = (_id) => {
+        //looks up item data using id
+        const purchasedItem = items.find(item => item.id === _id)
+        addToCart(purchasedItem)
     }
-
     return (
         <div>
             Buy my fruit!
@@ -38,7 +37,7 @@ function Store() {
                     price={item.price}
                     inventory={item.inventory}
                     key={item.id}
-                    addToCart={addToCart}
+                    addToCart={startAddToCart}
                 />
             )}
             

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function CartItem() {
+function CartItem({name,id,price}) {
     return (
-        <div>
-            
+        <div className="CartItem">
+            <h3>{name}     <span>${price}</span></h3>
         </div>
     )
 }
