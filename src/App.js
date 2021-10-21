@@ -8,8 +8,12 @@ import FriendList from './FriendList'
 
 function App() {
   const [inCart,setCart] = useState([])
+  const [total,setTotal] = useState(0)
   const addToCart = (itemData) => {
-    setCart([...inCart,itemData])
+    const newCart = [...inCart,itemData]
+    const newTotal = newCart.reduce((p,c) => p+c.price,0)
+    setTotal(newTotal)
+    setCart(newCart)
 }
 
   return (
@@ -20,7 +24,7 @@ function App() {
         <Fidget />
       </header>
       <Store addToCart={addToCart} />
-      <Cart inCart={inCart} />
+      <Cart inCart={inCart} total={total}/>
     </div>
   );
 }
